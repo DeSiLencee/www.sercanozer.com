@@ -394,8 +394,8 @@ column-gap: 3rem;
     top: -2.5rem;
 }
 .fact-item{
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 100%;
+    max-width: 100%;
     margin-top: var(--m-2-5);
     text-align: center;
 }

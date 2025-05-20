@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,6 +41,10 @@
 
                     <li class="nav-item">
                         <a href="#about" class="nav-link">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link active-link">Projects</a>
                     </li>
 
                     <li class="nav-item">
@@ -105,7 +110,7 @@
 
                      <!-- button -->
                       <div>
-                        <a href="#" class="btn btn-default">Hire me</a>
+                        <p><a href="mailto:sercan.ozer.28@gmail.com" class="btn btn-default" target="_blank">Hire me</a></p>
                       </div>
                       <!-- scroll down mouse wheel-->
                        <div class="scroll-down">
@@ -142,7 +147,7 @@
                                     kapsamında makalem yayımlandı. Öğrenmeye açık, disiplinli ve çözüm odaklı bir yaklaşımla
                                     kariyerimi daha da ileriye taşımayı hedefliyorum.</p>
                                     <div>
-                                        <a href="#" class="btn btn-default">Download CV</a>
+                                        <a href="assets/Sercan_Ozer_TR.pdf" class="btn btn-default" id="download-btn" download ="">Download CV</a>
                                     </div>
                                 </div>
                                 <div class="skills padd-15">
@@ -199,44 +204,58 @@
                  <div class="row">
                     <!-- fact item -->
                      <div class="fact-item padd-15">
-                        <i class="lni lni-thumbs-up"></i>
+                        <i class="lni lni-download"></i>
                         <div class="details">
-                            <h3>198</h3>
-                            <p>Project Done</p>
+                            
+                            <h3>CV Download Counter: <span id="cv-counter">0</span></h3>
                         </div>
                      </div>
+    <script type="module">
+  // Firebase modüllerini import et
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
+  import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-database.js";
 
-                     <!-- fact item -->
-                     <div class="fact-item padd-15">
-                        <i class="lni lni-coffee-cup"></i>
-                        <div class="details">
-                            <h3>198</h3>
-                            <p>Cup Of Coffee</p>
-                        </div>
-                     </div>
+  // Firebase yapılandırma
+  const firebaseConfig = {
+    apiKey: "AIzaSyC5KaNthDIYAm8P5FOMQnTHlTIP6LwCDvU",
+    authDomain: "sercanozerdotcom.firebaseapp.com",
+    databaseURL: "https://sercanozerdotcom-default-rtdb.firebaseio.com",
+    projectId: "sercanozerdotcom",
+    storageBucket: "sercanozerdotcom.firebasestorage.app",
+    messagingSenderId: "467268937467",
+    appId: "1:467268937467:web:99aa61632a3f1ea30b325e",
+    measurementId: "G-RL3ZVEBJC9"
+  };
 
-                     <!-- fact item -->
-                     <div class="fact-item padd-15">
-                        <i class="lni lni-user"></i>
-                        <div class="details">
-                            <h3>428</h3>
-                            <p>Satisfied Clients</p>
-                        </div>
-                     </div>
+  // Firebase başlat
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const database = getDatabase(app);
 
-                     <!-- fact item -->
-                     <div class="fact-item padd-15">
-                        <i class="lni lni-cup"></i>
-                        <div class="details">
-                            <h3>198</h3>
-                            <p>Project Done</p>
-                        </div>
-                     </div>
+  // Sayaç referansı
+  const counterRef = ref(database, "cvDownloadCount");
+
+  // Sayacı ekranda göster
+  onValue(counterRef, (snapshot) => {
+    const count = snapshot.val() || 0;
+    document.getElementById("cv-counter").innerText = count;
+  });
+
+  // Tıklanınca sayaç artır
+  document.getElementById("download-btn").addEventListener("click", () => {
+    runTransaction(counterRef, (currentValue) => {
+      return (currentValue || 0) + 1;
+    });
+  });
+</script>
+
+                    
                  </div>
             </div>
         </section>
     <!-- ==================== Projects =================-->
-     <section class="project section">
+     <section class="project section" id="projects">
         <div class="container">
             <!-- section title -->
              <h2 class="section-title padd-15">Projects</h2>
@@ -247,20 +266,20 @@
                         <img src="assets/img/metasurface.png" alt="" width="250" height="auto">
                         <h3>Metasurface Antenna</h3>
                         <p>S. Ozer, L. Kouhalvandi, L. Matekovits and M. Alibakhshikenari,
-                        "Design of Wideband Metasurface Structure with the Aid of BottomUp Optimization" 2024 Uluslararası İleri Uygulamalarda
-                        Elektromanyetik Konferansı (ICEAA), Lizbon, Portekiz, 2024, pp. 316-
-                        319, doi: 10.1109/ICEAA61917.2024.10701815.</p>
+                        "Design of Wideband Metasurface Structure with the Aid of BottomUp Optimization," 2024 International Conference on
+                        Electromagnetics in Advanced Applications (ICEAA), Lisbon, Portugal,
+                        2024, pp. 316-319, doi: 10.1109/ICEAA61917.2024.10701815.
+                        <br> <a href="https://ieeexplore.ieee.org/document/10701815" target="_blank"><i class="lni lni-link" style="font-size: 14px; color: #fff; text-decoration: underline; margin-top: 10%;"> IEEE Link</i></a>
+                        </p>
                     </div>
                  </div>
                  <!-- project items -->
                  <div class="project-item padd-15">
                     <div class="project-item-inner" style="background: rgb(249, 215, 76);">
-                        <img src="assets/img/metasurface.png" alt="" width="250" height="auto">
-                        <h3>Metasurface Antenna</h3>
-                        <p>S. Ozer, L. Kouhalvandi, L. Matekovits and M. Alibakhshikenari,
-                        "Design of Wideband Metasurface Structure with the Aid of BottomUp Optimization" 2024 Uluslararası İleri Uygulamalarda
-                        Elektromanyetik Konferansı (ICEAA), Lizbon, Portekiz, 2024, pp. 316-
-                        319, doi: 10.1109/ICEAA61917.2024.10701815.</p>
+                        <img src="assets/img/cisco (1).png" alt="" width="500" height="auto" style="margin-top: 5%;" onclick="openModal(this.src)">
+                        <h3 style="margin-top: 10%;">Three-Story Corporate Network Infrastructure</h3>
+                        <p>This network topology is designed for a three-story company structure. Each floor contains a switch, a router, and an access point. Inter-floor connections are established through three routers with routing enabled. Each department is isolated using a different VLAN. 
+                            Wireless access is provided on each floor via access points. The network includes a total of 8 VLANs, 3 routers, 3 switches, and various client devices.</p>
                     </div>
                  </div>
                  <!-- project items -->
@@ -292,31 +311,23 @@
                                  <div class="timeline-item">
                                     <i class="lni lni-graduation timeline-icon"></i>
                                     <h3 class="timeline-date">
-                                        <i class="lni lni-calendar"></i>2019 - present
-                                    <h3>
-                                        <h3 class="timeline-title">Academic Degree</h3>
-                                        <p class="timeline-text">lorem ipsum zangır zıngır</p>
-                                 </div>
-
-                                 <!-- timeline item -->
-                                 <div class="timeline-item">
-                                    <i class="lni lni-graduation timeline-icon"></i>
-                                    <h3 class="timeline-date">
-                                        <i class="lni lni-calendar"></i>2013 - 2017
+                                        <i class="lni lni-calendar"></i>2019 - 2024
                                     <h3>
                                         <h3 class="timeline-title">Bachelor's Degree</h3>
-                                        <p class="timeline-text">lorem ipsum zangır zıngır</p>
+                                        <p class="timeline-text">Doğuş University <br> Electronics & Communication Engineering <br>GPA - 2.92 / 4</p>
                                  </div>
 
                                  <!-- timeline item -->
                                  <div class="timeline-item">
                                     <i class="lni lni-graduation timeline-icon"></i>
                                     <h3 class="timeline-date">
-                                        <i class="lni lni-calendar"></i>2013 - 2009 
+                                        <i class="lni lni-calendar"></i>2014 - 2016
                                     <h3>
-                                        <h3 class="timeline-title">Honors Degree</h3>
-                                        <p class="timeline-text">lorem ipsum zangır zıngır</p>
+                                        <h3 class="timeline-title">Associate Degree</h3>
+                                        <p class="timeline-text">Istanbul University <br> Electronics & Communication Technologies <br>GPA - 2.71 / 4</p>
                                  </div>
+
+                                 
                             </div>
                         </div>
                     </div>
@@ -329,30 +340,35 @@
                                  <div class="timeline-item">
                                     <i class="lni lni-briefcase timeline-icon"></i>
                                     <h3 class="timeline-date">
-                                        <i class="lni lni-calendar"></i>2019 - present
+                                        <i class="lni lni-calendar"></i>03/2024 - 04/2024
                                     <h3>
-                                        <h3 class="timeline-title">Academic Degree</h3>
-                                        <p class="timeline-text">lorem ipsum zangır zıngır</p>
+                                        <h3 class="timeline-title">IT Support Specialist - Apphere</h3>
+                                        <p class="timeline-text">- I performed the hardware and software installations of user computers and managed the failure and support processes. 
+                                            <br>- Performed regular maintenance and reporting to ensure the up-to-dateness and security of devices by monitoring IT inventory.        </p>
                                  </div>
 
                                  <!-- timeline item -->
                                  <div class="timeline-item">
                                     <i class="lni lni-briefcase timeline-icon"></i>
                                     <h3 class="timeline-date">
-                                        <i class="lni lni-calendar"></i>2013 - 2017
+                                        <i class="lni lni-calendar"></i>12/2023 - 02/2024
                                     <h3>
-                                        <h3 class="timeline-title">Bachelor's Degree</h3>
-                                        <p class="timeline-text">lorem ipsum zangır zıngır</p>
+                                        <h3 class="timeline-title">IT Specialist - Ümraniye Municipality</h3>
+                                        <p class="timeline-text">- I solved hardware, software and network problems by responding to user support requests throughout the organization.
+                                            <br>- Performed configuration and maintenance operations of switch, router and firewall devices.
+                                        </p>
                                  </div>
 
                                  <!-- timeline item -->
                                  <div class="timeline-item">
                                     <i class="lni lni-briefcase timeline-icon"></i>
                                     <h3 class="timeline-date">
-                                        <i class="lni lni-calendar"></i>2013 - 2009 
+                                        <i class="lni lni-calendar"></i>09/2013 - 06/2014 
                                     <h3>
-                                        <h3 class="timeline-title">Honors Degree</h3>
-                                        <p class="timeline-text">lorem ipsum zangır zıngır</p>
+                                        <h3 class="timeline-title">IT / Helpdesk Technician - DemirDöküm</h3>
+                                        <p class="timeline-text">- I supported business continuity by providing rapid response to network connectivity issues, printer problems and basic hardware failures.
+                                            <br>- Provided installation, update and troubleshooting of Windows operating system and office software.
+                                        </p>
                                  </div>
                             </div>
                         </div>
@@ -537,6 +553,14 @@
                                 sercan.ozer.28@gmail.com
                             </span>
                         </div>
+                        <!--cotact information-->
+                        <div class="contac-information">
+                            <h3 class="cotact-subtitle">Location</h3>
+                            <span class="contact-description">
+                                <i class="lni lni-map-marker contact-icon"></i>
+                                İstanbul, Ümraniye 34771
+                            </span>
+                        </div>
                     </div>
                 </div>
                 <!--contact form-->
@@ -629,6 +653,5 @@
 
     <!-- ==================== JS =================-->
      <script src="assets/js/main.js"></script>
-
 </body>
 </html>
