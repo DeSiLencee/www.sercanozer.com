@@ -270,3 +270,4 @@ function closeModal() {
     setTimeout(type, delayBetweenWords);
   });
 
+  
