@@ -1150,7 +1150,7 @@ border:  2px solid var(--color-primary);
 
 @media screen and (max-height: 830px) {
     .intro {
-        height: 90dvh; /* Alttan boşluk ver */
+        height: 100dvh; /* Alttan boşluk ver */
     }
 
     .scroll-down {
