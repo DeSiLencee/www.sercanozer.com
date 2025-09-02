@@ -233,3 +233,41 @@ function closeModal() {
         clickable: true,
       },
     });
+
+
+  
+  const roles = ["IT Specialist", "System Engineer","Designer", "Content Writer", "Adventurer"];
+  let currentIndex = 0;
+  let charIndex = 0;
+  const typingSpeed = 150;
+  const erasingSpeed = 80;
+  const delayBetweenWords = 2000;
+
+  const dynamicText = document.querySelector(".dynamic-text");
+
+  function type() {
+    if (charIndex < roles[currentIndex].length) {
+      dynamicText.textContent += roles[currentIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingSpeed);
+    } else {
+      setTimeout(erase, delayBetweenWords);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      dynamicText.textContent = roles[currentIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, erasingSpeed);
+    } else {
+      currentIndex = (currentIndex + 1) % roles.length;
+      setTimeout(type, typingSpeed);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(type, delayBetweenWords);
+  });
+
+  

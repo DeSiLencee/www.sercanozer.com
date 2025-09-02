@@ -404,6 +404,17 @@ column-gap: 3rem;
     color: var(--color-gray);
 }
 
+.attention{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: -4%;
+    margin-bottom: 6%;
+    text-align: center;
+}
+.attention{
+    font-size: var(--h2-font-size);
+    color: var(--color-gray);
+}
 /*====== Project======*/
 .project .project-item{
     flex: 0 0 33.33%;
@@ -1074,4 +1085,104 @@ border:  2px solid var(--color-primary);
 }
 @media only screen and (max-width:320px){
 
+}
+.typing-container {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  display: flex;
+  align-items: flex-end; /* imleci alta hizalar */
+}
+
+/* Değişen yazının stili */
+.dynamic-text {
+  font-style: normal;
+  font-family: 'Fira Code', monospace; /* istersen burayı değiştirebilirsin */
+}
+
+/* Küçük ve yerinde imleç */
+.dynamic-text::after {
+  content: '|';
+  animation: blink-caret 0.7s step-end infinite;
+  font-size: 1em;
+  margin-left: 4px;
+}
+
+@keyframes blink-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.avatar-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* Tablet ve üzeri ekranlar için */
+@media (min-width: 768px) {
+  .avatar-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Büyük ekranlar için */
+@media (min-width: 1200px) {
+  .avatar-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-height: 830px) {
+    .intro {
+        height: 100dvh; /* Alttan boşluk ver */
+    }
+
+    .scroll-down {
+        margin-top: 30px; /* Scroll down ile hire me arasında boşluk */
+    }
+
+    .btn.btn-default {
+        margin-bottom: 20px; /* Buton ile diğer içerikler arasında boşluk */
+    }
+
+    .avatar-container {
+        transform: scale(0.9); /* İsteğe bağlı: avatarı biraz küçült */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Başlık boyutunu küçült */
+    }
+
+    .typing-container {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .sercan-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100vw;
+    }
+
+    .sercan-container-img {
+        max-width: 200%;
+        /* Mobilde daha büyük gözüksün */
+    }
 }
