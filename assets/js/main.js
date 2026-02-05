@@ -236,7 +236,7 @@ function closeModal() {
 
 
   
-  const roles = ["IT Specialist", "System Engineer","Designer", "Content Writer", "Adventurer"];
+  const roles = ["System & Network Engineer", "IT Specialist","Designer", "Content Writer", "Adventurer"];
   let currentIndex = 0;
   let charIndex = 0;
   const typingSpeed = 150;
