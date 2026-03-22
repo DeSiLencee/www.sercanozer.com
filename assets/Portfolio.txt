@@ -1,0 +1,100 @@
+  <!-- ==================== Portfolio =================-->
+       <section class="portfolio section" id="portfolio">
+        <div class="container">
+            <!--section title -->
+            <h2 class="section-title padd-15">Portfolio</h2>
+            <div class="row">
+                <div class="portfolio-filter padd-15">
+                    <div class="portfolio-filter-inner">
+                        <button type="button" class="active">Design</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- portfolio item-->
+                 <div class="portfolio-item padd-15">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-thumbnail-1" style="display: flex; justify-content: center;">
+                            <iframe width="320px" height="215px" src="https://www.youtube.com/embed/sRWcBdmzKPQ" allowfullscreen></iframe>
+                            <div class="mask"></div>
+                        </div>
+                        <span class="term"></span>
+                        <h3 class="portfolio-item-title">MAC Cosmetics</h3>
+                        <span class="more-button">&hellip;</span>
+                    </div>
+                 </div>
+
+                 <!-- portfolio item-->
+                 <div class="portfolio-item padd-15">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-thumbnail-1" style="display: flex; justify-content: center;">
+                            <iframe width="320px" height="215px" src="https://www.youtube.com/embed/lop_o7PtaCA" allowfullscreen></iframe>
+                            <div class="mask"></div>
+                        </div>
+                        <span class="term"></span>
+                        <h3 class="portfolio-item-title">Türkiye</h3>
+                        <span class="more-button">&hellip;</span>
+                    </div>
+                 </div>
+
+                 <!-- portfolio item-->
+                 <div class="portfolio-item padd-15">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-thumbnail-1" style="display: flex; justify-content: center;">
+                            <iframe width="320px" height="215px" src="https://www.youtube.com/embed/OnQ3Yu4-Jys" allowfullscreen></iframe>
+                            <div class="mask"></div>
+                        </div>
+                        <span class="term"></span>
+                        <h3 class="portfolio-item-title">Bridgestone</h3>
+                        <span class="more-button">&hellip;</span>
+                    </div>
+                 </div>
+
+                 
+                 <!-- portfolio item-->
+                 <div class="portfolio-item padd-15">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-thumbnail" style="display: flex; justify-content: center;">
+                            <iframe width="600px" height="500px" src="https://www.youtube.com/embed/usXViplzySg" allowfullscreen></iframe>
+                            <div class="mask"></div>
+                        </div>
+                        <span class="term"></span>
+                        <h3 class="portfolio-item-title">En Plus</h3>
+                        <span class="more-button">&hellip;</span>
+                    </div>
+                 </div>
+
+                 <!-- portfolio item-->
+                 <div class="portfolio-item padd-15">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-thumbnail" style="display: flex; justify-content: center;">
+                            <iframe width="600px" height="500px" src="https://www.youtube.com/embed/eulQkGIToMk" allowfullscreen></iframe>
+                            <div class="mask"></div>
+                        </div>
+                        <span class="term"></span>
+                        <h3 class="portfolio-item-title">Mango Sale</h3>
+                        <span class="more-button">&hellip;</span>
+                    </div>
+                 </div>
+
+                 <!-- portfolio item-->
+                 <div class="portfolio-item padd-15">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-thumbnail">
+                            <img src="assets/img/ZARA.jpg" class="centered-img" style="width: 600px; height: 500px;">
+                            <div class="mask"></div>
+                        </div>
+                        <span class="term"></span>
+                        <h3 class="portfolio-item-title" style="margin-left: 10%;">ZARA Sale</h3>
+                        <span class="more-button">&hellip;</span>
+                    </div>
+                 </div>
+
+            </div>
+        </div>
+        
+        <!-- fact item -->
+                <div class="attention">
+                    <h3><i class="lni lni-warning"></i>&nbsp;Designs and videos are not directly related to any brand.</h3>
+                </div>
